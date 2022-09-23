@@ -1,0 +1,46 @@
+using System.Transactions;
+
+namespace _3.GST
+{
+    internal class Program
+    {
+        class Order
+        {
+            
+        }
+        class FoodOrder: Order
+        {
+           public  double ShowBill(double a)
+            {
+                Console.Write("The GST on Food is Rs.: ");
+                return a * 0.05 ;
+            }
+        }
+        class GroceryOrder : Order
+        {
+            public double ShowBill(double a)
+            {
+                Console.WriteLine("The GST on Grocery is Rs.: ");
+                return a * 0.08 ;
+            }
+        }
+        class ClothesOrder: Order
+        {
+           public double ShowBill(double a)
+            {
+                Console.WriteLine("The GST on clothes is Rs.: ");
+                return a * 0.1 ;
+            }
+        }
+        static void Main(string[] args)
+        {
+           FoodOrder f1=new FoodOrder();
+            Console.WriteLine(f1.ShowBill(100));
+            GroceryOrder g1=new GroceryOrder();
+            Console.WriteLine(g1.ShowBill(100));
+            ClothesOrder c1 = new ClothesOrder();
+            Console.Write(c1.ShowBill(100));
+
+        }
+    }
+}
