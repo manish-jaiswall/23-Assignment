@@ -1,0 +1,22 @@
+namespace _5.AbstactClass
+{
+    internal class Program
+    {
+        abstract class BankAccount
+        {
+            public abstract void LinkAdhaar( string AdhaarNumber);
+        }
+        class Account:BankAccount
+        {
+            public override void LinkAdhaar( string AdhaarNumber)
+            {
+                Console.WriteLine("The BankAccount has been linked with your Adhaar Number: " + "XXXXXXXX" + AdhaarNumber.Substring(8));
+            }
+        }
+        static void Main(string[] args)
+        {
+            Account b1=new Account();
+            b1.LinkAdhaar("123456789012");
+        }
+    }
+}
