@@ -1,0 +1,32 @@
+namespace _2.dividebyzeroException
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine("Enter the number: ");
+            
+
+               
+               int num = Convert.ToInt32(Console.ReadLine());
+               double sqrtroot =  Math.Sqrt(num);
+                int sqr= num * num;
+            try
+            {
+
+                int dividezero = (int)num / 0;
+            }
+            catch (DivideByZeroException ex)
+            {
+                Console.WriteLine("Can't Divide By zero");
+            }
+
+                Console.WriteLine("The sqrtroot of num is: "+ sqrtroot);
+            Console.WriteLine("The sqr of number is: "+ sqr);
+               
+            
+
+
+        }
+    }
+}
