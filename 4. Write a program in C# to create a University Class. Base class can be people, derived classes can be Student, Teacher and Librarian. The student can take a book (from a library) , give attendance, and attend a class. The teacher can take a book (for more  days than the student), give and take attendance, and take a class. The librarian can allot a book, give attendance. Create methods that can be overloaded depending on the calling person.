@@ -1,0 +1,73 @@
+namespace _4.UniversityInheritance
+{
+    internal class Program
+    {
+        class People
+        {
+            public string book;
+            public string give_attendance;
+            public string take_attendance;
+            public string attend_class;
+            public int student_duration;
+
+
+            public void check(string book, string give_attendance, string take_attendance, string attend_class)
+            {
+                Console.WriteLine("The Teacher has taken the book " + book);
+                Console.WriteLine("The Teacher of student is " + give_attendance);
+                Console.WriteLine("The Teacher is attending class: " + attend_class);
+                Console.WriteLine("The teacher can take attendance: " + take_attendance);
+            }
+
+
+        }
+        class Student : People
+        {
+            public void check(string book, string give_attendance, string attend_class)
+            {
+                Console.WriteLine("The student has taken the book " + book);
+                Console.WriteLine("The student can give attendance " + give_attendance);
+                Console.WriteLine("The student is attending class: " + attend_class);
+            }
+            public void check(string book, string give_attendance)
+            {
+                Console.WriteLine("The student has taken the book " + book);
+                Console.WriteLine("The student can give attendance " + give_attendance);
+
+            }
+        }
+        class Teacher : People
+        {
+            public void check(string book, string give_attendance, string take_attendance, string attend_class, int student_duration)
+            {
+                Console.WriteLine("The Teacher has taken the book " + book);
+                Console.WriteLine("The Teacher of student is " + give_attendance);
+                Console.WriteLine("The Teacher is attending class: " + attend_class);
+                Console.WriteLine("The teacher can take attendance: " + take_attendance);
+                Console.WriteLine("The teacher can take book for: " + (student_duration + 5));
+            }
+        }
+
+
+
+
+        class Librairan : People
+        {
+            public void check(string book, string give_attendance)
+            {
+                Console.WriteLine("The Librarian has given the book " + book);
+                Console.WriteLine("The Librarian can give attandance " + give_attendance);
+
+            }
+
+
+        }
+        static void Main(string[] args)
+        {
+            Student s1 = new Student();
+            s1.check("Harry Potter", "Yes");
+            s1.check("Harry Potter", "Yes", "Yes");
+        }
+
+    }
+}
